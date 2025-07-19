@@ -7,9 +7,12 @@ interface NewMeetingDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export const NewMeetingDialog = ({ open, onOpenChange }: NewMeetingDialogProps) => {
-  const router = useRouter()
-  
+export const NewMeetingDialog = ({
+  open,
+  onOpenChange,
+}: NewMeetingDialogProps) => {
+  const router = useRouter();
+
   return (
     <ResponsiveDialog
       title="New Meeting"
@@ -18,9 +21,9 @@ export const NewMeetingDialog = ({ open, onOpenChange }: NewMeetingDialogProps) 
       onOpenChange={onOpenChange}
     >
       <MeetingForm
-        onSuccess={(id) => { 
-          onOpenChange(false)
-          router.push(`/meetings/${id}`)
+        onSuccess={(id) => {
+          onOpenChange(false);
+          router.push(`/meetings/${id}`);
         }}
         onCancel={() => onOpenChange(false)}
       />

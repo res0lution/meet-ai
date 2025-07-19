@@ -5,10 +5,14 @@ import { AgentGetOne } from "../../types";
 interface UpdateAgentDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  initialValues: AgentGetOne
+  initialValues: AgentGetOne;
 }
 
-export const UpdateAgentDialog = ({ open, onOpenChange, initialValues }: UpdateAgentDialogProps) => {
+export const UpdateAgentDialog = ({
+  open,
+  onOpenChange,
+  initialValues,
+}: UpdateAgentDialogProps) => {
   return (
     <ResponsiveDialog
       title="Edit Agent"

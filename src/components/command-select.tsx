@@ -34,11 +34,11 @@ export const CommandSelect = ({
 }: Props) => {
   const [open, setOpen] = useState(false);
   const selectedOption = options.find((option) => option.value === value);
-  
+
   const handleOpenChange = (open: boolean) => {
-    onSearch?.("")
-    setOpen(open)
-  }
+    onSearch?.("");
+    setOpen(open);
+  };
 
   return (
     <>
@@ -63,16 +63,16 @@ export const CommandSelect = ({
         <CommandInput placeholder="Search..." onValueChange={onSearch} />
         <CommandList>
           {options.map((option) => (
-              <CommandItem
-                key={option.id}
-                onSelect={() => {
-                  onSelect(option.value);
-                  setOpen(false);
-                }}
-              >
-                {option.children}
-              </CommandItem>
-            ))}
+            <CommandItem
+              key={option.id}
+              onSelect={() => {
+                onSelect(option.value);
+                setOpen(false);
+              }}
+            >
+              {option.children}
+            </CommandItem>
+          ))}
           <CommandEmpty>
             <span className="text-muted-foreground text-sm">
               No options found
